@@ -79,6 +79,7 @@ class ExercisesTableViewController: UITableViewController {
         if editingStyle == .delete {
             guard let exercise = self.exercises?[indexPath.row] else { return }
             CoreDataManager.sharedInstance.updateExercise(exercise: exercise, status: false)
+            refreshTable()
         }
     }
 }

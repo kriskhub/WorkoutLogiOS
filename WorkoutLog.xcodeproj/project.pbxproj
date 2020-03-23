@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8202FE7024292F2F001A73DF /* Export.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8202FE6F24292F2F001A73DF /* Export.swift */; };
 		822FB12A2428A0E9002CA16B /* ExercisesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822FB1292428A0E9002CA16B /* ExercisesTableViewController.swift */; };
 		822FB12C2428A356002CA16B /* UpdateExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822FB12B2428A356002CA16B /* UpdateExerciseViewController.swift */; };
 		828BD3BC24274A170095A73C /* Workout+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828BD3B824274A170095A73C /* Workout+CoreDataClass.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8202FE6F24292F2F001A73DF /* Export.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Export.swift; sourceTree = "<group>"; };
 		822FB1292428A0E9002CA16B /* ExercisesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesTableViewController.swift; sourceTree = "<group>"; };
 		822FB12B2428A356002CA16B /* UpdateExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateExerciseViewController.swift; sourceTree = "<group>"; };
 		828BD3B824274A170095A73C /* Workout+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Workout+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				828BD3B824274A170095A73C /* Workout+CoreDataClass.swift */,
 				828BD3B924274A170095A73C /* Workout+CoreDataProperties.swift */,
 				828BD3C124274A350095A73C /* CoreDataManager.swift */,
+				8202FE6F24292F2F001A73DF /* Export.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				828BD3CC242750110095A73C /* AddWorkoutView.swift in Sources */,
 				822FB12C2428A356002CA16B /* UpdateExerciseViewController.swift in Sources */,
 				828BD3D7242767940095A73C /* CustomSlide.swift in Sources */,
+				8202FE7024292F2F001A73DF /* Export.swift in Sources */,
 				82E223292427ADD40065002C /* CreateNewExerciseViewController.swift in Sources */,
 				82FDE07F24273F6500F44B72 /* WorkoutLog.xcdatamodeld in Sources */,
 				82E2232D2427AFCA0065002C /* Exercises+CoreDataProperties.swift in Sources */,

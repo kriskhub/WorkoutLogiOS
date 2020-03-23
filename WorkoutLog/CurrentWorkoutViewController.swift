@@ -50,6 +50,9 @@ class CurrentWorkoutViewController: UITableViewController {
         }
         tableView.rowHeight = 100
     }
+    @IBAction func exportWorkout(_ sender: Any) {
+        present(Export.shared.handleExportUI(workout: workout), animated: true)
+    }
 
     @objc func refreshTable() {
         if CoreDataManager.sharedInstance.getLatestWorkout() != nil {

@@ -105,11 +105,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Today" id="6rC-LO-9vI">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="u6Q-zC-95j">
-                            <connections>
-                                <segue destination="acU-eX-xi0" kind="presentation" identifier="chooseExerciseSegue" id="Onc-GT-hHZ"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="plus" catalog="system" id="u6Q-zC-95j">
+                                <connections>
+                                    <segue destination="acU-eX-xi0" kind="presentation" identifier="chooseExerciseSegue" id="Onc-GT-hHZ"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="square.and.arrow.up" catalog="system" id="ONC-7M-Y9f">
+                                <connections>
+                                    <action selector="exportWorkout:" destination="mKa-wY-jur" id="OBk-PK-DF0"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hGJ-UY-rJZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -487,6 +494,7 @@
         <image name="gear" catalog="system" width="64" height="58"/>
         <image name="minus" catalog="system" width="64" height="12"/>
         <image name="plus" catalog="system" width="64" height="56"/>
+        <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="FfT-6O-8VR"/>
