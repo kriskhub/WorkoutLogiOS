@@ -21,9 +21,15 @@ class CurrentWorkoutViewController: UITableViewController {
         self.tableView.reloadData()
         self.hideKeyboardWhenTappedAround()
 
-        if CoreDataManager.sharedInstance.getLatestWorkout() != nil {
+        if CoreDataManager.sharedInstance.getLatestWorkout() != nil && workout == nil {
             workout = CoreDataManager.sharedInstance.getLatestWorkout()
             exercises = CoreDataManager.sharedInstance.getExercises(workout: workout) ?? []
+        } else {
+            exercises = CoreDataManager.sharedInstance.getExercises(workout: workout) ?? []
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd-MM-YYYY"
+            let date = workout.value(forKey: "date") as? Date
+            self.title = dateFormatter.string(from: date ?? Date())
         }
 
         NotificationCenter.default.addObserver(self,
@@ -97,24 +103,6 @@ class CurrentWorkoutViewController: UITableViewController {
             refreshTable()
         }
     }
-
-    @objc func decrementAmount(_ sender: UIButton) {
-        let exercise = exercises[sender.tag]
-        let newValue = CoreDataManager.sharedInstance.decrementAmount(exercise: exercise)
-        let indexPath = IndexPath(row: sender.tag, section: 0)
-        let cell = tableView.cellForRow(at: indexPath) as? CustomExerciseCell
-        cell?.amountLabel.text = String(newValue)
-        refreshTable()
-    }
-
-    @objc func incrementAmount(_ sender: UIButton) {
-        let exercise = exercises[sender.tag]
-        let newValue = CoreDataManager.sharedInstance.incrementAmount(exercise: exercise)
-        let indexPath = IndexPath(row: sender.tag, section: 0)
-        let cell = tableView.cellForRow(at: indexPath) as? CustomExerciseCell
-        cell?.amountLabel.text = String(newValue)
-        refreshTable()
-    }
 }
 
 class CustomExerciseCell: UITableViewCell {
@@ -122,20 +110,20 @@ class CustomExerciseCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
-    @IBOutlet weak var plusButton: UIButton! {
-        didSet {
-            plusButton.addTarget(CurrentWorkoutViewController.shared, action: #selector(CurrentWorkoutViewController.shared.incrementAmount(_:)), for: .touchUpInside)
-        }
-    }
+    @IBOutlet weak var plusButton: UIButton!
+    @IBOutlet weak var minusButton: UIButton!
 
-    @IBOutlet weak var minusButton: UIButton! {
-        didSet {
-            minusButton.addTarget(CurrentWorkoutViewController.shared, action: #selector(CurrentWorkoutViewController.shared.decrementAmount(_:)), for: .touchUpInside)
-        }
+    @IBAction func plusButton(_ sender: UIButton) {
+        let exercise = exercises[sender.tag]
+        let newValue = CoreDataManager.sharedInstance.incrementAmount(exercise: exercise)
+        self.amountLabel.text = String(newValue)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refreshCurrentWorkoutTable"), object: nil)
     }
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    @IBAction func minusButton(_ sender: UIButton) {
+        let exercise = exercises[sender.tag]
+        let newValue = CoreDataManager.sharedInstance.decrementAmount(exercise: exercise)
+        self.amountLabel.text = String(newValue)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refreshCurrentWorkoutTable"), object: nil)
     }
 }
 

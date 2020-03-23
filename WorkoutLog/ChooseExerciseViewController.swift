@@ -41,6 +41,9 @@ class ChooseExerciseViewController: UIViewController, UIPickerViewDelegate, UIPi
         selector: #selector(refreshPicker),
         name: NSNotification.Name(rawValue: "refreshExercisePicker"),
         object: nil)
+        if exercises.count > 0 {
+            chosenExercise = exercises[0]
+        }
      }
 
     @objc func refreshPicker() {
