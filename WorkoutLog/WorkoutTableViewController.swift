@@ -12,11 +12,13 @@ import CoreData
 class WorkoutTableViewController: UITableViewController {
 
     var refreshController = UIRefreshControl()
+    var workouts: [NSManagedObject]?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view.
-
+        workouts = CoreDataManager.sharedInstance.getWorkouts()
         NotificationCenter.default.addObserver(self,
                      selector: #selector(refreshTable),
                      name: NSNotification.Name(rawValue: "refreshWorkoutTable"),
@@ -34,14 +36,10 @@ class WorkoutTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "LabelCell")
-
-        let workout = CoreDataManager.sharedInstance.getWorkouts()[indexPath.row]
-
-        let name = workout.value(forKey: "name") as? String ?? ""
-        let date = workout.value(forKey: "date") as? Date ?? Date()
-
+        let workout = workouts?[indexPath.row]
+        let name = workout?.value(forKey: "name") as? String ?? ""
+        let date = workout?.value(forKey: "date") as? Date ?? Date()
         let timestamp = DateFormatter.localizedString(from: date, dateStyle: .medium, timeStyle: .short)
-
         cell.textLabel?.text = name
         cell.detailTextLabel?.text = timestamp
 
@@ -49,8 +47,6 @@ class WorkoutTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let newViewController = storyBoard
             .instantiateViewController(withIdentifier: "CurrentWorkoutViewController")
@@ -58,6 +54,17 @@ class WorkoutTableViewController: UITableViewController {
         newViewController?.workout = CoreDataManager.sharedInstance.getWorkouts()[indexPath.row]
         self.navigationController?.pushViewController(newViewController!, animated: true)
         //self.present(newViewController!, animated: true, completion: nil)
+    }
+
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            guard let workout = workouts?[indexPath.row] else { return }
+            CoreDataManager.sharedInstance.deleteWorkout(workout: workout)
+            //CoreDataManager.sharedInstance.deleteExerciseLog(exercise: exercise)
+            workouts?.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            refreshTable()
+        }
     }
 }
 

@@ -80,9 +80,9 @@ class CurrentWorkoutViewController: UITableViewController {
         let name = workout.value(forKey: "name") as? String ?? ""
         // let date = workout.value(forKey: "date") as? Date ?? Date()
         let amount = workout.value(forKey: "amount") as? Int ?? 0
-
+        let rate = workout.value(forKey: "rate") as? Int ?? 0
         cell.titleLabel.text = name
-        cell.subtitleLabel.text = "Description" // TODO:
+        cell.subtitleLabel.text = "Rate: \(rate)"
         cell.amountLabel.text = String(amount)
         cell.minusButton.tag = indexPath.row
         cell.plusButton.tag = indexPath.row

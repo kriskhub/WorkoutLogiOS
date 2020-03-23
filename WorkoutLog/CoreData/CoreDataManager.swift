@@ -14,6 +14,26 @@ class CoreDataManager {
     var appDelegate = UIApplication.shared.delegate as? AppDelegate
     static let sharedInstance = CoreDataManager()
 
+    func deleteWorkout(workout: NSManagedObject) {
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        let managedContext = appDelegate?.persistentContainer.viewContext
+        let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Sets")
+        let predicate = NSPredicate(format: "workout = %@", workout)
+        deleteFetch.predicate = predicate
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
+        do
+        {
+            try managedContext?.execute(deleteRequest)
+            managedContext?.delete(workout)
+            appDelegate?.saveContext()
+        }
+        catch
+        {
+            print ("There was an error")
+        }
+
+
+    }
 
     func getWorkouts() -> [NSManagedObject] {
         let managedContext = appDelegate?.persistentContainer.viewContext
@@ -143,6 +163,16 @@ class CoreDataManager {
 
         exercise.setValue(name, forKey: "name")
         exercise.setValue(rate, forKey: "rate")
+        exercise.setValue(status, forKey: "active")
+        let managedContext = appDelegate?.persistentContainer.viewContext
+        do {
+            try managedContext?.save()
+        } catch {
+            print("Failed saving")
+        }
+    }
+
+    func updateExercise(exercise: NSManagedObject, status: Bool) {
         exercise.setValue(status, forKey: "active")
         let managedContext = appDelegate?.persistentContainer.viewContext
         do {

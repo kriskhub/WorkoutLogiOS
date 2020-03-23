@@ -24,8 +24,9 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M2b-Vs-dhB">
-                                            <rect key="frame" x="205" y="39.5" width="30" height="18"/>
+                                            <rect key="frame" x="205" y="41.5" width="30" height="8.5"/>
                                             <constraints>
+                                                <constraint firstAttribute="height" constant="25" id="EAr-TM-LVc"/>
                                                 <constraint firstAttribute="width" constant="30" id="NRk-XB-KOM"/>
                                             </constraints>
                                             <state key="normal" backgroundImage="minus" catalog="system"/>
@@ -78,7 +79,7 @@
                                     <constraints>
                                         <constraint firstItem="pW2-93-Cy6" firstAttribute="top" secondItem="gc0-qm-W4s" secondAttribute="topMargin" constant="20" id="Cpi-SA-gYV"/>
                                         <constraint firstItem="Fv1-KD-Arf" firstAttribute="top" secondItem="J70-IA-odX" secondAttribute="bottom" constant="8" id="TmS-vC-2II"/>
-                                        <constraint firstItem="M2b-Vs-dhB" firstAttribute="top" secondItem="gc0-qm-W4s" secondAttribute="topMargin" constant="20" id="aur-PX-4Rx"/>
+                                        <constraint firstItem="M2b-Vs-dhB" firstAttribute="top" secondItem="gc0-qm-W4s" secondAttribute="topMargin" constant="22" id="aur-PX-4Rx"/>
                                         <constraint firstItem="pW2-93-Cy6" firstAttribute="leading" secondItem="Dua-9s-XNc" secondAttribute="trailing" constant="17" id="czT-Wx-eRX"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="pW2-93-Cy6" secondAttribute="trailing" constant="10" id="ipV-da-Esi"/>
                                         <constraint firstItem="J70-IA-odX" firstAttribute="leading" secondItem="gc0-qm-W4s" secondAttribute="leadingMargin" constant="20" id="l58-Eo-JUY"/>

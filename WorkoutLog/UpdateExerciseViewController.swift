@@ -24,7 +24,7 @@ class UpdateExerciseViewController: UIViewController, UIPickerViewDelegate, UIPi
         let status = activeSwitch.isOn
         CoreDataManager.sharedInstance.updateExercise(exercise: exercise, name: name, rate: Int64(rate) ?? 10, status: status)
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refreshExerciseTable"), object: nil)
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     var chosenRate: Any?
     var exercise: NSManagedObject?
