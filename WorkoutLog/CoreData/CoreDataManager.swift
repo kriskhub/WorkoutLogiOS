@@ -96,6 +96,18 @@ class CoreDataManager {
     }
 
 
+    func getExercises() -> [NSManagedObject]? {
+        let managedContext = appDelegate?.persistentContainer.viewContext
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "Sets")
+        fetchRequest.resultType = .managedObjectResultType
+        do {
+            guard let objects = try managedContext?.fetch(fetchRequest) else { return [] }
+            return objects as? [NSManagedObject]
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+            return []
+        }
+    }
 
     func getExercises(workout: NSManagedObject) -> [NSManagedObject]? {
         let managedContext = appDelegate?.persistentContainer.viewContext

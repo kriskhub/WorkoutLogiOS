@@ -19,6 +19,7 @@ class ChooseExerciseViewController: UIViewController, UIPickerViewDelegate, UIPi
         CoreDataManager.sharedInstance.addExerciseToWorkout(workout: myWorkout, exercise: myExercise)
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refreshCurrentWorkoutTable"), object: nil)
         self.dismiss(animated: true, completion: nil)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "dismissOptionView"), object: nil)
     }
     @IBAction func createNewButton(_ sender: Any) {
          //self.dismiss(animated: true, completion: nil)

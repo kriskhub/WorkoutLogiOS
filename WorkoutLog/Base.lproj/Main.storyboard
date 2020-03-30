@@ -399,13 +399,20 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Workouts" id="H9j-c0-iow">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="Y2u-rN-UVe">
-                            <connections>
-                                <segue destination="LpC-dN-j3H" kind="popoverPresentation" popoverAnchorBarButtonItem="Y2u-rN-UVe" id="65X-A9-Gp1">
-                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                </segue>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="plus" catalog="system" id="Y2u-rN-UVe">
+                                <connections>
+                                    <segue destination="LpC-dN-j3H" kind="popoverPresentation" popoverAnchorBarButtonItem="Y2u-rN-UVe" id="65X-A9-Gp1">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="square.and.arrow.up" catalog="system" id="kz8-J3-Kaj">
+                                <connections>
+                                    <action selector="shareButton:" destination="04J-Fg-Y7G" id="yxQ-nc-a3Z"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ols-UK-BEo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -615,7 +622,7 @@
         <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="STi-vm-STe"/>
+        <segue reference="65X-A9-Gp1"/>
         <segue reference="FfT-6O-8VR"/>
     </inferredMetricsTieBreakers>
 </document>

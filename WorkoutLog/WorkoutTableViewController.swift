@@ -14,6 +14,12 @@ class WorkoutTableViewController: UITableViewController {
     var refreshController = UIRefreshControl()
     var workouts: [NSManagedObject]?
 
+
+    @IBAction func shareButton(_ sender: Any) {
+        present(Export.shared.handleMultipleExportUI(), animated: true)
+    }
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
