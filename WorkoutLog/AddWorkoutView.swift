@@ -12,9 +12,15 @@ import CoreData
 
 class AddWorkoutView: UIViewController {
 
+    @IBOutlet weak var datePicker: UIDatePicker!
+    
+    @IBAction func datePickerChanged(_ sender: Any) {
+        // User changed date
+    }
     @IBAction func addButton(_ sender: Any) {
         guard let name = nameTextField.text else { return  }
-        CoreDataManager.sharedInstance.createWorkout(name: name)
+        CoreDataManager.sharedInstance.createWorkout(name: name, date: datePicker.date)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refreshWorkoutTable"), object: nil)
         self.dismiss(animated: true, completion: nil)
     }
     @IBOutlet weak var nameTextField: UITextField!
@@ -24,7 +30,4 @@ class AddWorkoutView: UIViewController {
         self.hideKeyboardWhenTappedAround()
          // Do any additional setup after loading the view.
      }
-
-
-    
 }

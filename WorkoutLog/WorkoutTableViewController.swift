@@ -17,16 +17,30 @@ class WorkoutTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
+        self.tableView.dataSource = self
+        self.tableView.reloadData()
         // Do any additional setup after loading the view.
         workouts = CoreDataManager.sharedInstance.getWorkouts()
         NotificationCenter.default.addObserver(self,
                      selector: #selector(refreshTable),
                      name: NSNotification.Name(rawValue: "refreshWorkoutTable"),
                      object: nil)
+        // Refresh Control
+        refreshControl = UIRefreshControl()
+        refreshControl!.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl!.addTarget(self, action: #selector(refreshTable), for: .valueChanged)
+        tableView.addSubview(refreshControl!)
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl ?? refreshController)
+        }
     }
 
     @objc func refreshTable() {
+        workouts = CoreDataManager.sharedInstance.getWorkouts()
         self.tableView.reloadData()
+        self.refreshControl?.endRefreshing()
     }
 
 

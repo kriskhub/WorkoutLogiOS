@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8202FE7024292F2F001A73DF /* Export.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8202FE6F24292F2F001A73DF /* Export.swift */; };
+		82231DFE243218F00048B1B7 /* ChooseWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82231DFD243218F00048B1B7 /* ChooseWorkoutViewController.swift */; };
 		822FB12A2428A0E9002CA16B /* ExercisesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822FB1292428A0E9002CA16B /* ExercisesTableViewController.swift */; };
 		822FB12C2428A356002CA16B /* UpdateExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822FB12B2428A356002CA16B /* UpdateExerciseViewController.swift */; };
 		828BD3BC24274A170095A73C /* Workout+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828BD3B824274A170095A73C /* Workout+CoreDataClass.swift */; };
@@ -18,6 +19,7 @@
 		828BD3D1242762C70095A73C /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 828BD3D0242762C70095A73C /* Slide.xib */; };
 		828BD3D5242763300095A73C /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828BD3D4242763300095A73C /* Slide.swift */; };
 		828BD3D7242767940095A73C /* CustomSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828BD3D6242767940095A73C /* CustomSlide.swift */; };
+		829557FE243234D800B3D04A /* OptionExWoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829557FD243234D800B3D04A /* OptionExWoViewController.swift */; };
 		82E223272427ADBE0065002C /* ChooseExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E223262427ADBE0065002C /* ChooseExerciseViewController.swift */; };
 		82E223292427ADD40065002C /* CreateNewExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E223282427ADD40065002C /* CreateNewExerciseViewController.swift */; };
 		82E2232C2427AFCA0065002C /* Exercises+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E2232A2427AFC90065002C /* Exercises+CoreDataClass.swift */; };
@@ -35,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		8202FE6F24292F2F001A73DF /* Export.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Export.swift; sourceTree = "<group>"; };
+		82231DFD243218F00048B1B7 /* ChooseWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseWorkoutViewController.swift; sourceTree = "<group>"; };
 		822FB1292428A0E9002CA16B /* ExercisesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesTableViewController.swift; sourceTree = "<group>"; };
 		822FB12B2428A356002CA16B /* UpdateExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateExerciseViewController.swift; sourceTree = "<group>"; };
 		828BD3B824274A170095A73C /* Workout+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Workout+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -45,6 +48,7 @@
 		828BD3D0242762C70095A73C /* Slide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
 		828BD3D4242763300095A73C /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
 		828BD3D6242767940095A73C /* CustomSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlide.swift; sourceTree = "<group>"; };
+		829557FD243234D800B3D04A /* OptionExWoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionExWoViewController.swift; sourceTree = "<group>"; };
 		82E223262427ADBE0065002C /* ChooseExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseExerciseViewController.swift; sourceTree = "<group>"; };
 		82E223282427ADD40065002C /* CreateNewExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewExerciseViewController.swift; sourceTree = "<group>"; };
 		82E2232A2427AFC90065002C /* Exercises+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Exercises+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -133,6 +137,8 @@
 				82E223262427ADBE0065002C /* ChooseExerciseViewController.swift */,
 				82E223282427ADD40065002C /* CreateNewExerciseViewController.swift */,
 				822FB12B2428A356002CA16B /* UpdateExerciseViewController.swift */,
+				82231DFD243218F00048B1B7 /* ChooseWorkoutViewController.swift */,
+				829557FD243234D800B3D04A /* OptionExWoViewController.swift */,
 			);
 			path = WorkoutLog;
 			sourceTree = "<group>";
@@ -216,10 +222,12 @@
 				828BD3D7242767940095A73C /* CustomSlide.swift in Sources */,
 				8202FE7024292F2F001A73DF /* Export.swift in Sources */,
 				82E223292427ADD40065002C /* CreateNewExerciseViewController.swift in Sources */,
+				82231DFE243218F00048B1B7 /* ChooseWorkoutViewController.swift in Sources */,
 				82FDE07F24273F6500F44B72 /* WorkoutLog.xcdatamodeld in Sources */,
 				82E2232D2427AFCA0065002C /* Exercises+CoreDataProperties.swift in Sources */,
 				82FDE07724273F6500F44B72 /* CurrentWorkoutViewController.swift in Sources */,
 				828BD3BD24274A170095A73C /* Workout+CoreDataProperties.swift in Sources */,
+				829557FE243234D800B3D04A /* OptionExWoViewController.swift in Sources */,
 				82FDE07324273F6500F44B72 /* AppDelegate.swift in Sources */,
 				828BD3D5242763300095A73C /* Slide.swift in Sources */,
 				82E223272427ADBE0065002C /* ChooseExerciseViewController.swift in Sources */,
@@ -373,13 +381,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.1;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G6LSJM77NX;
 				INFOPLIST_FILE = WorkoutLog/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kkullmann.WorkoutLog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -392,13 +401,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.1;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G6LSJM77NX;
 				INFOPLIST_FILE = WorkoutLog/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kkullmann.WorkoutLog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

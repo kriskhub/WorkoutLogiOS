@@ -39,6 +39,8 @@ class CoreDataManager {
         let managedContext = appDelegate?.persistentContainer.viewContext
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "Workout")
         fetchRequest.resultType = .managedObjectResultType
+        let sort = NSSortDescriptor(key: "date", ascending: false)
+        fetchRequest.sortDescriptors = [sort]
         do {
             guard let objects = try managedContext?.fetch(fetchRequest) else { return [] }
             return objects as! [NSManagedObject]
@@ -109,7 +111,6 @@ class CoreDataManager {
             return []
         }
     }
-
 
     func addExerciseLog(workout: NSManagedObject, exercise: NSManagedObject) {
         let managedContext = appDelegate?.persistentContainer.viewContext
@@ -182,12 +183,12 @@ class CoreDataManager {
         }
     }
 
-    func createWorkout(name: String) {
+    func createWorkout(name: String, date: Date) {
         let managedContext = appDelegate?.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "Workout", in: managedContext!)
         let newWorkout = NSManagedObject(entity: entity!, insertInto: managedContext)
         newWorkout.setValue(name, forKey: "name")
-        newWorkout.setValue(Date(), forKey: "date")
+        newWorkout.setValue(date, forKey: "date")
         do {
             try managedContext?.save()
         } catch {

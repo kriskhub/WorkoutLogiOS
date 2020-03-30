@@ -27,7 +27,7 @@ class ChooseExerciseViewController: UIViewController, UIPickerViewDelegate, UIPi
     var chosenExercise: NSManagedObject?
     var workout: NSManagedObject?
     var exercises: [NSManagedObject] = []
-    var sender: CurrentWorkoutViewController?
+    var sender: OptionExWoViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()

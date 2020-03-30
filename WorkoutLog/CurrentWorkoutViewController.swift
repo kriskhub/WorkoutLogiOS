@@ -64,12 +64,19 @@ class CurrentWorkoutViewController: UITableViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
-        if segue.identifier == "chooseExerciseSegue" {
-            if let viewController = segue.destination as? ChooseExerciseViewController {
+//        if segue.identifier == "chooseExerciseSegue" {
+//            if let viewController = segue.destination as? ChooseExerciseViewController {
+//                viewController.workout = self.workout
+//                viewController.sender = self
+//            }
+//        }
+        if segue.identifier == "optionSegue" {
+            if let viewController = segue.destination as? OptionExWoViewController {
                 viewController.workout = self.workout
                 viewController.sender = self
             }
         }
+
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

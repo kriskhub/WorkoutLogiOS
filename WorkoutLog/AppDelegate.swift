@@ -22,9 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         dateFormatter.dateFormat = "dd-MM-YYYY"
         let latestWorkout = CoreDataManager.sharedInstance.getLatestWorkout()
         if latestWorkout == nil {
-            CoreDataManager.sharedInstance.createWorkout(name: dateFormatter.string(from: date))
+            CoreDataManager.sharedInstance.createWorkout(name: dateFormatter.string(from: date), date: Date())
         } else if !Calendar.current.isDateInToday(latestWorkout?.value(forKey: "date") as? Date ?? Date()){
-            CoreDataManager.sharedInstance.createWorkout(name: dateFormatter.string(from: date))
+            CoreDataManager.sharedInstance.createWorkout(name: dateFormatter.string(from: date), date: Date())
         } else {
             
         }
