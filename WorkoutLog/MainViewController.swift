@@ -1,5 +1,5 @@
 //
-//  CurrentWorkoutViewController.swift
+//  MainViewController.swift
 //  WorkoutLog
 //
 //  Created by Kristian Kullmann on 22.03.20.
@@ -10,11 +10,11 @@ import UIKit
 import CoreData
 
 var exercises: [NSManagedObject] = []
-class CurrentWorkoutViewController: UITableViewController {
+class MainViewController: UITableViewController {
     var refreshController = UIRefreshControl()
     var workout: NSManagedObject!
 
-    static let shared = CurrentWorkoutViewController()
+    static let shared = MainViewController()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.dataSource = self

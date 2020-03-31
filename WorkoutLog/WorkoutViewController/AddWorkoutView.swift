@@ -37,7 +37,7 @@ class AddWorkoutView: UIViewController {
     }
 
     var workout: NSManagedObject?
-    var sender: CurrentWorkoutViewController?
+    var sender: MainViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()

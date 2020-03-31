@@ -13,7 +13,7 @@ import UIKit
 class OptionExWoViewController: UIViewController {
 
 
-    var sender: CurrentWorkoutViewController?
+    var sender: MainViewController?
     var workout: NSManagedObject?
 
     override func viewDidLoad() {

@@ -70,7 +70,7 @@ class WorkoutTableViewController: UITableViewController {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let newViewController = storyBoard
             .instantiateViewController(withIdentifier: "CurrentWorkoutViewController")
-            as? CurrentWorkoutViewController
+            as? MainViewController
         newViewController?.workout = CoreDataManager.sharedInstance.getWorkouts()[indexPath.row]
         self.navigationController?.pushViewController(newViewController!, animated: true)
         //self.present(newViewController!, animated: true, completion: nil)

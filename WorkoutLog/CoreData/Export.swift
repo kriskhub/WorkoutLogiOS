@@ -122,8 +122,6 @@ class Export {
                     try data?.write(to: destUrl)
                 } catch {/* error handling here */}
             }
-
-
         }
         return destUrl
     }

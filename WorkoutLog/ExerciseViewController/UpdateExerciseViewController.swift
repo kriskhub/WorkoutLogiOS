@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import CoreData
+import SwiftMessages
 
 class UpdateExerciseViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
@@ -26,6 +27,19 @@ class UpdateExerciseViewController: UIViewController, UIPickerViewDelegate, UIPi
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refreshExerciseTable"), object: nil)
         self.navigationController?.popViewController(animated: true)
     }
+
+    @IBAction func informationButton(_ sender: Any) {
+        let view = MessageView.viewFromNib(layout: .messageView)
+        view.configureTheme(.info)
+        view.configureDropShadow()
+        let iconText = "ℹ️"
+        view.button?.isHidden = true
+        view.configureContent(title: "Information", body: "Display this exercise for selection or not.", iconText: iconText)
+        view.layoutMarginAdditions = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        (view.backgroundView as? CornerRoundingView)?.cornerRadius = 10
+        SwiftMessages.show(view: view)
+    }
+    
     var chosenRate: Any?
     var exercise: NSManagedObject?
     var pickerData: [Any] = []
