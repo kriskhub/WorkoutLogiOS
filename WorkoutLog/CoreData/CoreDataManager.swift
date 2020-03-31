@@ -96,18 +96,18 @@ class CoreDataManager {
     }
 
 
-    func getExercises() -> [NSManagedObject]? {
-        let managedContext = appDelegate?.persistentContainer.viewContext
-        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "Sets")
-        fetchRequest.resultType = .managedObjectResultType
-        do {
-            guard let objects = try managedContext?.fetch(fetchRequest) else { return [] }
-            return objects as? [NSManagedObject]
-        } catch let error as NSError {
-            print("Could not fetch. \(error), \(error.userInfo)")
-            return []
-        }
-    }
+//    func getExercises() -> [NSManagedObject]? {
+//        let managedContext = appDelegate?.persistentContainer.viewContext
+//        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "Sets")
+//        fetchRequest.resultType = .managedObjectResultType
+//        do {
+//            guard let objects = try managedContext?.fetch(fetchRequest) else { return [] }
+//            return objects as? [NSManagedObject]
+//        } catch let error as NSError {
+//            print("Could not fetch. \(error), \(error.userInfo)")
+//            return []
+//        }
+//    }
 
     func getExercises(workout: NSManagedObject) -> [NSManagedObject]? {
         let managedContext = appDelegate?.persistentContainer.viewContext
@@ -155,6 +155,19 @@ class CoreDataManager {
         managedContext?.delete(exercise)
         appDelegate?.saveContext()
     }
+
+
+    func updateWorkout(workout: NSManagedObject, name: String, date: Date) {
+        let managedContext = appDelegate?.persistentContainer.viewContext
+        workout.setValue(name, forKey: "name")
+        workout.setValue(date, forKey: "date")
+        do {
+            try managedContext?.save()
+        } catch {
+            print("Failed saving")
+        }
+    }
+
 
     func createExercise(name: String, rate: Int64, image: UIImage, status: Bool) {
         let managedContext = appDelegate?.persistentContainer.viewContext
