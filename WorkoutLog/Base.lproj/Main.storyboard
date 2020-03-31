@@ -105,11 +105,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Today" id="6rC-LO-9vI">
-                        <barButtonItem key="leftBarButtonItem" title="Edit" id="db0-2V-LYd">
-                            <connections>
-                                <segue destination="LpC-dN-j3H" kind="presentation" identifier="editWorkoutSegue" id="Vx9-Bg-jSC"/>
-                            </connections>
-                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem title="Item" image="plus" catalog="system" id="u6Q-zC-95j">
                                 <connections>
@@ -123,10 +118,13 @@
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <segue destination="LpC-dN-j3H" kind="presentation" identifier="editWorkoutSegue" id="mw9-Oz-FIc"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hGJ-UY-rJZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1841" y="-987"/>
+            <point key="canvasLocation" x="1959" y="-987"/>
         </scene>
         <!--Option Ex Wo View Controller-->
         <scene sceneID="8vu-yX-Dxu">
@@ -629,7 +627,7 @@
         <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Vx9-Bg-jSC"/>
+        <segue reference="mw9-Oz-FIc"/>
         <segue reference="FfT-6O-8VR"/>
     </inferredMetricsTieBreakers>
 </document>

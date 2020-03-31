@@ -20,7 +20,11 @@ class CurrentWorkoutViewController: UITableViewController {
         self.tableView.dataSource = self
         self.tableView.reloadData()
         self.hideKeyboardWhenTappedAround()
-
+        // -----
+        let editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editWorkout))
+        self.navigationItem.leftItemsSupplementBackButton = true
+        self.navigationItem.leftBarButtonItems = [editButton]
+        // -----
         if CoreDataManager.sharedInstance.getLatestWorkout() != nil && workout == nil {
             workout = CoreDataManager.sharedInstance.getLatestWorkout()
             exercises = CoreDataManager.sharedInstance.getExercises(workout: workout) ?? []
@@ -88,6 +92,10 @@ class CurrentWorkoutViewController: UITableViewController {
             }
         }
 
+    }
+
+   @objc func editWorkout() {
+        performSegue(withIdentifier: "editWorkoutSegue", sender: self)
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
