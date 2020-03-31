@@ -9,6 +9,9 @@
 import UIKit
 import CoreData
 
+let dateFormatter = DateFormatter()
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -17,14 +20,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
-        let date = Date()
-        let dateFormatter = DateFormatter()
+        let date = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date()) ?? Date()
         dateFormatter.dateFormat = "dd-MM-YYYY"
         let latestWorkout = CoreDataManager.sharedInstance.getLatestWorkout()
         if latestWorkout == nil {
-            CoreDataManager.sharedInstance.createWorkout(name: dateFormatter.string(from: date), date: Date())
+            CoreDataManager.sharedInstance.createWorkout(name: dateFormatter.string(from: date), date: date)
         } else if !Calendar.current.isDateInToday(latestWorkout?.value(forKey: "date") as? Date ?? Date()){
-            CoreDataManager.sharedInstance.createWorkout(name: dateFormatter.string(from: date), date: Date())
+            CoreDataManager.sharedInstance.createWorkout(name: dateFormatter.string(from: date), date: date)
         } else {
             
         }

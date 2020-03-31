@@ -50,6 +50,17 @@ class CurrentWorkoutViewController: UITableViewController {
         }
         tableView.rowHeight = 100
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        if workout == nil || CoreDataManager.sharedInstance.getLatestWorkout() == nil {
+            let date = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date()) ?? Date()
+            dateFormatter.dateFormat = "dd-MM-YYYY"
+            CoreDataManager.sharedInstance.createWorkout(name: dateFormatter.string(from: date), date: date)
+            workout = CoreDataManager.sharedInstance.getLatestWorkout()
+            exercises = CoreDataManager.sharedInstance.getExercises(workout: workout) ?? []
+        }
+    }
+
     @IBAction func exportWorkout(_ sender: Any) {
         present(Export.shared.handleSingleExportUI(workout: workout), animated: true)
     }
@@ -64,12 +75,12 @@ class CurrentWorkoutViewController: UITableViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
-//        if segue.identifier == "chooseExerciseSegue" {
-//            if let viewController = segue.destination as? ChooseExerciseViewController {
-//                viewController.workout = self.workout
-//                viewController.sender = self
-//            }
-//        }
+        if segue.identifier == "editWorkoutSegue" {
+            if let viewController = segue.destination as? AddWorkoutView {
+                viewController.workout = self.workout
+                viewController.sender = self
+            }
+        }
         if segue.identifier == "optionSegue" {
             if let viewController = segue.destination as? OptionExWoViewController {
                 viewController.workout = self.workout

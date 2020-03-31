@@ -14,6 +14,7 @@ class ExercisesTableViewController: UITableViewController {
 
     var refreshController = UIRefreshControl()
     var exercises: [NSManagedObject]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.dataSource = self

@@ -105,6 +105,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Today" id="6rC-LO-9vI">
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="db0-2V-LYd">
+                            <connections>
+                                <segue destination="LpC-dN-j3H" kind="presentation" identifier="editWorkoutSegue" id="Vx9-Bg-jSC"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem title="Item" image="plus" catalog="system" id="u6Q-zC-95j">
                                 <connections>
@@ -367,8 +372,10 @@
                         <viewLayoutGuide key="safeArea" id="neV-E1-UhK"/>
                     </view>
                     <connections>
+                        <outlet property="addButtonOutlet" destination="fSJ-zb-1U4" id="hZJ-Ch-yKf"/>
                         <outlet property="datePicker" destination="yzw-X9-NvG" id="qh6-AX-ttW"/>
-                        <outlet property="nameTextField" destination="bMB-Kq-Z4Y" id="DUB-3l-tj3"/>
+                        <outlet property="nameTextField" destination="bMB-Kq-Z4Y" id="405-ns-Lct"/>
+                        <outlet property="titleLabel" destination="250-vA-7dC" id="HNi-vy-YIM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OH4-5n-y3x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -622,7 +629,7 @@
         <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="65X-A9-Gp1"/>
+        <segue reference="Vx9-Bg-jSC"/>
         <segue reference="FfT-6O-8VR"/>
     </inferredMetricsTieBreakers>
 </document>
