@@ -217,6 +217,8 @@ class CoreDataManager {
         let managedContext = appDelegate?.persistentContainer.viewContext
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "Exercises")
         fetchRequest.resultType = .managedObjectResultType
+        let sort = NSSortDescriptor(key: "active", ascending: false)
+        fetchRequest.sortDescriptors = [sort]
         do {
             guard let objects = try managedContext?.fetch(fetchRequest) else { return [] }
             return objects as! [NSManagedObject]

@@ -23,6 +23,7 @@ class CreateNewExerciseViewController: UIViewController, UIPickerViewDelegate, U
         let image = imageView.image ?? UIImage()
         let status = activeSwitch.isOn
         CoreDataManager.sharedInstance.createExercise(name: name, rate: Int64(rate) ?? 10, image: image, status: status)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refreshExercisePicker"), object: nil)
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refreshExerciseTable"), object: nil)
         self.dismiss(animated: true, completion: nil)
     }

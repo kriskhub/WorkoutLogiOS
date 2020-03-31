@@ -69,7 +69,7 @@ class WorkoutTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let newViewController = storyBoard
-            .instantiateViewController(withIdentifier: "CurrentWorkoutViewController")
+            .instantiateViewController(withIdentifier: "MainViewController")
             as? MainViewController
         newViewController?.workout = CoreDataManager.sharedInstance.getWorkouts()[indexPath.row]
         self.navigationController?.pushViewController(newViewController!, animated: true)

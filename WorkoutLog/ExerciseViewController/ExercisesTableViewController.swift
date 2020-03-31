@@ -77,11 +77,44 @@ class ExercisesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            guard let exercise = self.exercises?[indexPath.row] else { return }
-            CoreDataManager.sharedInstance.updateExercise(exercise: exercise, status: false)
-            refreshTable()
+//        if editingStyle == .delete {
+//            guard let exercise = self.exercises?[indexPath.row] else { return }
+//            CoreDataManager.sharedInstance.updateExercise(exercise: exercise, status: false)
+//            refreshTable()
+//        }
+
+    }
+    override func tableView(_ tableView: UITableView,
+                   leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?
+    {
+        let closeAction = UIContextualAction(style: .normal, title:  "Active", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+                success(true)
+            })
+        closeAction.image = UIImage(named: "tick")
+        closeAction.backgroundColor = .green
+        if let exercise = self.exercises?[indexPath.row] {
+            CoreDataManager.sharedInstance.updateExercise(exercise: exercise, status: true)
+            let cell = self.tableView.cellForRow(at: indexPath)
+            cell?.backgroundColor = .none
+            //refreshTable()
         }
+        return UISwipeActionsConfiguration(actions: [closeAction])
+    }
+    override func tableView(_ tableView: UITableView,
+                   trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?
+    {
+        let modifyAction = UIContextualAction(style: .normal, title:  "Inactive", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+            success(true)
+        })
+        modifyAction.image = UIImage(named: "stop")
+        modifyAction.backgroundColor = .darkGray
+        if let exercise = self.exercises?[indexPath.row] {
+            CoreDataManager.sharedInstance.updateExercise(exercise: exercise, status: false)
+            let cell = self.tableView.cellForRow(at: indexPath)
+            cell?.backgroundColor = .systemGray6
+            //refreshTable()
+        }
+        return UISwipeActionsConfiguration(actions: [modifyAction])
     }
 }
 
