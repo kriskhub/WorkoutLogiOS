@@ -23,6 +23,7 @@
 		82E2232C2427AFCA0065002C /* Exercises+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E2232A2427AFC90065002C /* Exercises+CoreDataClass.swift */; };
 		82E2232D2427AFCA0065002C /* Exercises+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E2232B2427AFC90065002C /* Exercises+CoreDataProperties.swift */; };
 		82E223312427B1900065002C /* Sets+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E223302427B1900065002C /* Sets+CoreDataProperties.swift */; };
+		82F7B49B2434B2D40093F195 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F7B49A2434B2D40093F195 /* TabBarController.swift */; };
 		82FDE07324273F6500F44B72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FDE07224273F6500F44B72 /* AppDelegate.swift */; };
 		82FDE07524273F6500F44B72 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FDE07424273F6500F44B72 /* SceneDelegate.swift */; };
 		82FDE07724273F6500F44B72 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FDE07624273F6500F44B72 /* MainViewController.swift */; };
@@ -75,6 +76,7 @@
 		82E2232A2427AFC90065002C /* Exercises+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Exercises+CoreDataClass.swift"; sourceTree = "<group>"; };
 		82E2232B2427AFC90065002C /* Exercises+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Exercises+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		82E223302427B1900065002C /* Sets+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sets+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		82F7B49A2434B2D40093F195 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		82FDE06F24273F6500F44B72 /* WorkoutLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82FDE07224273F6500F44B72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82FDE07424273F6500F44B72 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				828BD3C024274A230095A73C /* CoreData */,
 				82FDE07224273F6500F44B72 /* AppDelegate.swift */,
 				82FDE07624273F6500F44B72 /* MainViewController.swift */,
+				82F7B49A2434B2D40093F195 /* TabBarController.swift */,
 				829557FD243234D800B3D04A /* OptionExWoViewController.swift */,
 				82FDE07424273F6500F44B72 /* SceneDelegate.swift */,
 				82FDE07A24273F6500F44B72 /* Main.storyboard */,
@@ -365,6 +368,7 @@
 				828BD3C924274D010095A73C /* Sets+CoreDataClass.swift in Sources */,
 				828BD3C224274A350095A73C /* CoreDataManager.swift in Sources */,
 				82FDE07524273F6500F44B72 /* SceneDelegate.swift in Sources */,
+				82F7B49B2434B2D40093F195 /* TabBarController.swift in Sources */,
 				82E223312427B1900065002C /* Sets+CoreDataProperties.swift in Sources */,
 				82E2232C2427AFCA0065002C /* Exercises+CoreDataClass.swift in Sources */,
 			);
@@ -520,7 +524,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kkullmann.WorkoutLog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -542,7 +546,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kkullmann.WorkoutLog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

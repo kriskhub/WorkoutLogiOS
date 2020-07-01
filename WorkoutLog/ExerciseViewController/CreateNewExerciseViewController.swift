@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import CoreData
+import SwiftMessages
 
 class CreateNewExerciseViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
@@ -16,6 +17,17 @@ class CreateNewExerciseViewController: UIViewController, UIPickerViewDelegate, U
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var ratePicker: UIPickerView!
     @IBOutlet weak var activeSwitch: UISwitch!
+    @IBAction func activeInformation(_ sender: Any) {
+        let view = MessageView.viewFromNib(layout: .messageView)
+        view.configureTheme(.info)
+        view.configureDropShadow()
+        let iconText = "ℹ️"
+        view.button?.isHidden = true
+        view.configureContent(title: "Information", body: "Display this exercise for selection or not.", iconText: iconText)
+        view.layoutMarginAdditions = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        (view.backgroundView as? CornerRoundingView)?.cornerRadius = 10
+        SwiftMessages.show(view: view)
+    }
 
     @IBAction func addButton(_ sender: Any) {
         let rate = chosenRate as? String ?? "10"

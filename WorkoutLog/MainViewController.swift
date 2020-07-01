@@ -32,15 +32,18 @@ class MainViewController: UITableViewController {
             exercises = CoreDataManager.sharedInstance.getExercises(workout: workout) ?? []
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "dd-MM-YYYY"
-            let date = workout.value(forKey: "date") as? Date
-            self.title = dateFormatter.string(from: date ?? Date())
+            let date = workout.value(forKey: "date") as? Date ?? Date()
+            self.title = workout.value(forKey: "name") as? String ?? dateFormatter.string(from: date)
         }
 
         NotificationCenter.default.addObserver(self,
         selector: #selector(refreshTable),
         name: NSNotification.Name(rawValue: "refreshCurrentWorkoutTable"),
         object: nil)
-
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(setToToday(notification:)),
+                                               name: .today,
+                                               object: nil)
 
         // Refresh Control
         refreshControl = UIRefreshControl()
@@ -65,8 +68,17 @@ class MainViewController: UITableViewController {
         }
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.popViewController(animated: false)
+    }
+
     @IBAction func exportWorkout(_ sender: Any) {
         present(Export.shared.handleSingleExportUI(workout: workout), animated: true)
+    }
+
+    @objc func setToToday(notification: NSNotification) {
+         workout = CoreDataManager.sharedInstance.getLatestWorkout()
+         exercises = CoreDataManager.sharedInstance.getExercises(workout: workout) ?? []
     }
 
     @objc func refreshTable() {
@@ -166,4 +178,10 @@ extension UIViewController {
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
+}
+
+
+extension Notification.Name {
+     static let today = Notification.Name("today")
+     static let workout = Notification.Name("workout")
 }

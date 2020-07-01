@@ -47,6 +47,13 @@ class ChooseExerciseViewController: UIViewController, UIPickerViewDelegate, UIPi
         }
      }
 
+    override func viewWillAppear(_ animated: Bool) {
+        if exercises.count > 0 {
+            exercises = CoreDataManager.sharedInstance.getActiveExercises()
+            chosenExercise = exercises[0]
+        }
+    }
+
     @objc func refreshPicker() {
         exercises = CoreDataManager.sharedInstance.getActiveExercises()
         exercisePicker.reloadAllComponents();
@@ -66,7 +73,9 @@ class ChooseExerciseViewController: UIViewController, UIPickerViewDelegate, UIPi
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         let name = exercises[row].value(forKey: "name") as? String ?? ""
-        return name
+        let rate = exercises[row].value(forKey: "rate") as? Int ?? 0
+        let rowName = name + " - Rate: " + String(rate)
+        return rowName
 
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {

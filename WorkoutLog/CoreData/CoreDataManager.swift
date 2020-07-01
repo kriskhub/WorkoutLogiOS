@@ -233,6 +233,8 @@ class CoreDataManager {
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "Exercises")
         let predicate = NSPredicate(format: "active = \(true)")
         fetchRequest.predicate = predicate
+        let sort = NSSortDescriptor(key: "name", ascending: true)
+        fetchRequest.sortDescriptors = [sort]
         fetchRequest.resultType = .managedObjectResultType
         do {
             guard let objects = try managedContext?.fetch(fetchRequest) else { return [] }

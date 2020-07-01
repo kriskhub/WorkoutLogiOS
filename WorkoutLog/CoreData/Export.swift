@@ -39,7 +39,10 @@ class Export {
         if let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last {
             let string = NSMutableString()
            //Id,Name,Type,Color,Size,Gender,Optional,Price
-            let workoutName = workout.value(forKey: "name") as? String ?? ""
+            var workoutName = workout.value(forKey: "name") as? String ?? ""
+            workoutName = workoutName.replacingOccurrences(of: " ", with: "_")
+            workoutName = workoutName.replacingOccurrences(of: "w/", with: "with")
+            workoutName = workoutName.replacingOccurrences(of: "/", with: "_")
             string.append("name, rate, amount")
             let filename = "Export-"
                 + workoutName + "-"

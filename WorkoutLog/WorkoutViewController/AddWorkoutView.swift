@@ -29,6 +29,7 @@ class AddWorkoutView: UIViewController {
             let name = nameTextField.text ?? dateFormatter.string(from: Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date()) ?? Date())
             let date = datePicker.date
             CoreDataManager.sharedInstance.updateWorkout(workout: self.workout!, name: name, date: date)
+            self.sender?.title = name
         } else { // Create New Workout
             CoreDataManager.sharedInstance.createWorkout(name: name, date: datePicker.date)
         }
