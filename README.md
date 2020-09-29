@@ -9,10 +9,9 @@ Fundamental functionalities:
 * Export workouts as CSV-file
 
 ## Screenshots
-
-![Image of the current Workout](screenshots/current_workout.PNG)
-![Image of the list of workouts](screenshots/list_workouts.PNG)
-![Image of the list of exercises](screenshots/list_exercises.PNG)
-![Image of the export functionality](screenshots/export.jpeg)
-![Image of the option to choose a workout](screenshots/choose_exercise.PNG)
+<img src="screenshots/current_workout.PNG" width=50% height=50%></img>
+<img src="screenshots/list_workouts.PNG" width=50% height=50%></img>
+<img src="screenshots/list_exercises.PNG" width=50% height=50%></img>
+<img src="screenshots/choose_exercise.PNG" width=50% height=50%></img>
+<img src="screenshots/export.jpeg" width=50% height=50%></img>
 
