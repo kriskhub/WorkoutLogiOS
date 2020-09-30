@@ -11,7 +11,7 @@ Fundamental functionalities:
 ## Screenshots
 <img src="screenshots/current_workout.PNG" width=50% height=50%></img>
 <img src="screenshots/list_workouts.PNG" width=50% height=50%></img>
-<img src="screenshots/list_exercises.PNG" width=50% height=50%></img>
+<img src="screenshots/list_exercise.PNG" width=50% height=50%></img>
 <img src="screenshots/choose_exercise.PNG" width=50% height=50%></img>
 <img src="screenshots/export.jpeg" width=50% height=50%></img>
 
