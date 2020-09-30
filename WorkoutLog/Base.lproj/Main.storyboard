@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -108,7 +108,8 @@
                         <rightBarButtonItems>
                             <barButtonItem title="Item" image="plus" catalog="system" id="u6Q-zC-95j">
                                 <connections>
-                                    <segue destination="Xgx-tv-b2I" kind="presentation" identifier="optionSegue" id="vp1-OM-mEV"/>
+                                    <action selector="addExWo:" destination="mKa-wY-jur" id="ZYY-47-62O"/>
+                                    <segue destination="X2E-gQ-gwD" kind="presentation" identifier="optionSegue" id="rzC-D8-kF6"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="Item" image="square.and.arrow.up" catalog="system" id="ONC-7M-Y9f">
@@ -126,22 +127,6 @@
             </objects>
             <point key="canvasLocation" x="1972" y="-987"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ES9-uc-NBd">
-            <objects>
-                <navigationController id="Xgx-tv-b2I" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iy3-Nj-eVh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="X2E-gQ-gwD" kind="relationship" relationship="rootViewController" id="pvn-y1-hwp"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tPG-1I-2C8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2919" y="-1686"/>
-        </scene>
         <!--Options-->
         <scene sceneID="8vu-yX-Dxu">
             <objects>
@@ -151,13 +136,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Exercise" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5HV-UP-8x1">
-                                <rect key="frame" x="57" y="172" width="261" height="33"/>
+                                <rect key="frame" x="91" y="116" width="193.5" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Workout" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bst-l4-l1N">
-                                <rect key="frame" x="57" y="363" width="261" height="40"/>
+                                <rect key="frame" x="57" y="307" width="261" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="iVg-Eu-y5i"/>
                                 </constraints>
@@ -166,7 +151,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zvG-BP-ZcD">
-                                <rect key="frame" x="151" y="249" width="73" height="36"/>
+                                <rect key="frame" x="151" y="193" width="73" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Exercise"/>
                                 <connections>
@@ -174,7 +159,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wj8-dd-Uhf">
-                                <rect key="frame" x="131" y="447" width="113" height="36"/>
+                                <rect key="frame" x="131" y="391" width="113" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Workout"/>
                                 <connections>
@@ -182,7 +167,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZP-A8-iCu">
-                                <rect key="frame" x="305" y="181" width="54" height="22"/>
+                                <rect key="frame" x="305" y="125" width="54" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="9Lg-mb-cmG"/>
                                     <constraint firstAttribute="width" constant="54" id="Eht-lR-nsk"/>
@@ -197,7 +182,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbv-Gx-yvg">
-                                <rect key="frame" x="305" y="374" width="54" height="22"/>
+                                <rect key="frame" x="305" y="318" width="54" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="ESH-Ve-zpo"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="JEH-9h-Hm8"/>
@@ -211,22 +196,38 @@
                                     <action selector="informationWorkout:" destination="X2E-gQ-gwD" eventType="touchUpInside" id="zlL-jO-O1r"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="la2-9W-ftq">
+                                <rect key="frame" x="236" y="20" width="92" height="102"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkY-Vh-tcH">
+                                <rect key="frame" x="236" y="214" width="92" height="102"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="wj8-dd-Uhf" firstAttribute="leading" secondItem="XfZ-Xx-8qW" secondAttribute="leading" constant="131" id="1ac-v4-Fvp"/>
                             <constraint firstItem="aZP-A8-iCu" firstAttribute="top" secondItem="XfZ-Xx-8qW" secondAttribute="top" constant="125" id="2hO-7c-7EG"/>
                             <constraint firstItem="XfZ-Xx-8qW" firstAttribute="trailing" secondItem="kbv-Gx-yvg" secondAttribute="trailing" constant="16" id="38p-8w-h6b"/>
-                            <constraint firstItem="XfZ-Xx-8qW" firstAttribute="trailing" secondItem="5HV-UP-8x1" secondAttribute="trailing" constant="57" id="7tO-9O-T68"/>
-                            <constraint firstItem="XfZ-Xx-8qW" firstAttribute="trailing" secondItem="zvG-BP-ZcD" secondAttribute="trailing" constant="151" id="8lv-OP-Mqv"/>
+                            <constraint firstItem="XfZ-Xx-8qW" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5HV-UP-8x1" secondAttribute="trailing" id="7tO-9O-T68"/>
+                            <constraint firstItem="XfZ-Xx-8qW" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zvG-BP-ZcD" secondAttribute="trailing" id="8lv-OP-Mqv"/>
                             <constraint firstItem="XfZ-Xx-8qW" firstAttribute="trailing" secondItem="Bst-l4-l1N" secondAttribute="trailing" constant="57" id="Ki9-KD-vnJ"/>
                             <constraint firstItem="Bst-l4-l1N" firstAttribute="top" secondItem="zvG-BP-ZcD" secondAttribute="bottom" constant="78" id="LX7-86-cBh"/>
-                            <constraint firstItem="zvG-BP-ZcD" firstAttribute="leading" secondItem="XfZ-Xx-8qW" secondAttribute="leading" constant="151" id="Pkw-ch-Jxa"/>
+                            <constraint firstItem="zvG-BP-ZcD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="XfZ-Xx-8qW" secondAttribute="leading" id="Pkw-ch-Jxa"/>
                             <constraint firstItem="kbv-Gx-yvg" firstAttribute="top" secondItem="5HV-UP-8x1" secondAttribute="bottom" constant="169" id="Shs-uB-3PW"/>
                             <constraint firstItem="XfZ-Xx-8qW" firstAttribute="trailing" secondItem="wj8-dd-Uhf" secondAttribute="trailing" constant="131" id="YJa-GE-hJv"/>
                             <constraint firstItem="5HV-UP-8x1" firstAttribute="centerX" secondItem="nbq-LT-hL2" secondAttribute="centerX" id="Ybu-d3-gSP"/>
                             <constraint firstItem="zvG-BP-ZcD" firstAttribute="top" secondItem="5HV-UP-8x1" secondAttribute="bottom" constant="44" id="Z5k-PY-jfE"/>
-                            <constraint firstItem="5HV-UP-8x1" firstAttribute="leading" secondItem="XfZ-Xx-8qW" secondAttribute="leading" constant="57" id="c5P-jf-MCm"/>
+                            <constraint firstItem="5HV-UP-8x1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="XfZ-Xx-8qW" secondAttribute="leading" id="c5P-jf-MCm"/>
                             <constraint firstItem="wj8-dd-Uhf" firstAttribute="top" secondItem="Bst-l4-l1N" secondAttribute="bottom" constant="44" id="dQI-Pg-awr"/>
                             <constraint firstItem="Bst-l4-l1N" firstAttribute="leading" secondItem="XfZ-Xx-8qW" secondAttribute="leading" constant="57" id="dYD-eH-9Q3"/>
                             <constraint firstItem="5HV-UP-8x1" firstAttribute="top" secondItem="XfZ-Xx-8qW" secondAttribute="top" constant="116" id="fJn-Mv-KMr"/>
@@ -238,6 +239,10 @@
                     <navigationItem key="navigationItem" title="Options" id="m7j-MP-qzm">
                         <barButtonItem key="backBarButtonItem" title="Back" id="uF1-7K-tZ4"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="exerciseInfoText" destination="la2-9W-ftq" id="Pgv-PN-NIk"/>
+                        <outlet property="workoutInfoText" destination="tkY-Vh-tcH" id="xoe-Vr-Shm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5HY-e3-qCL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -267,8 +272,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add"/>
                                 <connections>
+                                    <action selector="add:" destination="7GS-NG-qIa" eventType="touchUpInside" id="Hco-2f-JHZ"/>
                                     <action selector="addButton:" destination="acU-eX-xi0" eventType="touchUpInside" id="Exv-Xn-dUD"/>
-                                    <action selector="addWorkout:" destination="7GS-NG-qIa" eventType="touchUpInside" id="eD8-2X-a9W"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F2T-DC-exL">
@@ -751,17 +756,17 @@
             <point key="canvasLocation" x="1840.8" y="1825.6371814092954"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="ant" catalog="system" width="52" height="64"/>
-        <image name="calendar" catalog="system" width="64" height="52"/>
-        <image name="gear" catalog="system" width="64" height="58"/>
-        <image name="info.circle" catalog="system" width="64" height="60"/>
-        <image name="minus" catalog="system" width="64" height="12"/>
-        <image name="plus" catalog="system" width="64" height="56"/>
-        <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="mw9-Oz-FIc"/>
         <segue reference="FfT-6O-8VR"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <image name="ant" catalog="system" width="107" height="128"/>
+        <image name="calendar" catalog="system" width="128" height="106"/>
+        <image name="gear" catalog="system" width="128" height="119"/>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
+        <image name="minus" catalog="system" width="128" height="24"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+    </resources>
 </document>

@@ -13,8 +13,7 @@ import CoreData
 class ChooseWorkoutViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var workoutPicker: UIPickerView!
-
-    @IBAction func addWorkout(_ sender: Any) {
+    @IBAction func add(_ sender: Any) {
         guard let senderWorkout = workout else {return}
         guard let myWorkout = chosenWorkout else {return}
 
@@ -27,7 +26,7 @@ class ChooseWorkoutViewController: UIViewController, UIPickerViewDelegate, UIPic
         self.dismiss(animated: true, completion: nil)
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "dismissOptionView"), object: nil)
     }
-    
+
     var chosenWorkout: NSManagedObject?
     var workout: NSManagedObject?
     var workouts: [NSManagedObject] = []
